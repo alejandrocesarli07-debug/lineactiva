@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Línea Activa 24/7 — Recepción Telefónica 24/7 para Negocios</title>
+  <meta name="description" content="Agente de voz 24/7 (español e inglés) que responde llamadas, captura clientes y agenda citas. Ideal para negocios latinos en USA." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0B1220" />
+  <meta property="og:title" content="Línea Activa 24/7 — Nunca pierdas una llamada" />
+  <meta property="og:description" content="Responde llamadas 24/7, captura leads y agenda citas automáticamente (español e inglés)." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0B1220;
+      --panel:#0F1A32;
+      --card:#0E1730;
+      --text:#EAF0FF;
+      --muted:#B9C3E6;
+      --line:rgba(255,255,255,.10);
+      --accent:#6EE7FF;
+      --accent2:#A78BFA;
+      --good:#34D399;
+      --warn:#FBBF24;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius:18px;
+      --radius2:26px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(110,231,255,.20), transparent 60%),
+        radial-gradient(900px 600px at 90% 0%, rgba(167,139,250,.18), transparent 60%),
+        linear-gradient(180deg, #070B14 0%, var(--bg) 60%, #070B14 100%);
+      line-height:1.55;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+    .topbar{
+      position:sticky; top:0;
+      backdrop-filter: blur(10px);
+      background: rgba(7,11,20,.55);
+      border-bottom: 1px solid var(--line);
+      z-index:50;
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .logo{
+      width:38px; height:38px;
+      border-radius:12px;
+      background:
+        radial-gradient(14px 14px at 30% 30%, rgba(110,231,255,.9), transparent 60%),
+        radial-gradient(18px 18px at 70% 60%, rgba(167,139,250,.85), transparent 65%),
+        linear-gradient(135deg, rgba(110,231,255,.20), rgba(167,139,250,.18));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    .brand strong{font-size:14px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+    .links{
+      display:none;
+      gap:18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .links a{opacity:.9}
+    .links a:hover{opacity:1; color:var(--text)}
+    .ctaRow{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 13px;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(110,231,255,.20), rgba(167,139,250,.22));
+      border-color: rgba(110,231,255,.28);
+    }
+    .btn.primary:hover{border-color: rgba(110,231,255,.45)}
+    .btn.small{padding:10px 12px; border-radius: 12px; font-weight:700}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: var(--good);
+      box-shadow: 0 0 0 3px rgba(52,211,153,.18);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 34px 0 18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .hTitle{
+      font-size: 34px;
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+      margin: 10px 0 10px;
+    }
+    .hSub{
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 18px;
+      max-width: 60ch;
+    }
+    .heroCard{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .grid3{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .mini{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(11,18,32,.45);
+      padding: 14px;
+    }
+    .mini h4{margin:0 0 6px; font-size:14px}
+    .mini p{margin:0; color:var(--muted); font-size:13px}
+    .check{
+      display:flex; gap:10px; align-items:flex-start;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .check b{color: var(--text)}
+    .icon{
+      width:20px; height:20px; border-radius:8px;
+      background: rgba(52,211,153,.16);
+      border: 1px solid rgba(52,211,153,.25);
+      display:flex; align-items:center; justify-content:center;
+      font-size: 12px;
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    /* Sections */
+    section{padding: 16px 0}
+    .sectionTitle{
+      font-size: 18px;
+      margin: 0 0 10px;
+      letter-spacing: -.3px;
+    }
+    .sectionSub{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 80ch;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .card{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 16px;
+    }
+    .card h3{margin:0 0 8px; font-size:15px}
+    .card p{margin:0; color: var(--muted); font-size:13px}
+
+    .steps{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .step{
+      display:flex; gap:12px; align-items:flex-start;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 16px;
+    }
+    .num{
+      width:34px; height:34px; border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.20));
+      border: 1px solid rgba(110,231,255,.22);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+    .step h4{margin:0 0 4px; font-size:14px}
+    .step p{margin:0; color: var(--muted); font-size:13px}
+
+    .pricing{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .priceCard{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(110,231,255,.07), rgba(255,255,255,.03));
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .priceTop{
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap: 12px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .money{
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -.6px;
+      margin: 8px 0 6px;
+    }
+    .money small{
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    ul{
+      margin: 10px 0 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    li{margin: 6px 0}
+    .fine{
+      margin-top: 12px;
+      color: rgba(185,195,230,.85);
+      font-size: 12px;
+    }
+
+    /* Contact */
+    .contactBox{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      padding: 18px;
+      display:grid;
+      gap: 12px;
+    }
+    .field{
+      display:grid;
+      gap: 6px;
+    }
+    label{
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    input, textarea{
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,11,20,.35);
+      color: var(--text);
+      padding: 12px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+    textarea{min-height: 90px; resize: vertical}
+    .row{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .mutedSmall{color: var(--muted); font-size: 12px}
+    .footer{
+      padding: 20px 0 30px;
+      color: rgba(185,195,230,.85);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+      margin-top: 18px;
+    }
+
+    /* Responsive */
+    @media (min-width: 860px){
+      .links{display:flex}
+      .hero{
+        grid-template-columns: 1.2fr .8fr;
+        align-items: stretch;
+        gap: 16px;
+      }
+      .hTitle{font-size: 44px}
+      .grid3{grid-template-columns: repeat(3, 1fr)}
+      .cards{grid-template-columns: repeat(3, 1fr)}
+      .steps{grid-template-columns: repeat(3, 1fr)}
+      .pricing{grid-template-columns: 1fr 1fr}
+      .row{grid-template-columns: 1fr 1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <strong>Línea Activa 24/7</strong>
+          <span>Recepción telefónica 24/7 para negocios latinos en USA</span>
+        </div>
+      </div>
+
+      <div class="links">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#servicios">Qué hace</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <div class="ctaRow">
+        <span class="pill"><span class="dot"></span> Disponible 24/7</span>
+        <a class="btn primary" href="#contacto">Solicitar demo</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <div class="hero" id="inicio">
+      <div>
+        <span class="pill">📞 Responde llamadas • 🗣️ Español e inglés • 📅 Agenda citas</span>
+        <h1 class="hTitle">Nunca pierdas un cliente por no contestar el teléfono.</h1>
+        <p class="hSub">
+          Instalamos un <b>agente de voz 24/7</b> que atiende llamadas en español e inglés,
+          captura los datos del cliente y <b>agenda citas automáticamente</b>. Todo queda guardado en tu CRM.
+        </p>
+
+        <div class="ctaRow" style="flex-wrap:wrap">
+          <a class="btn primary" href="#contacto">Quiero una demo</a>
+          <a class="btn" href="#precios">Ver precios</a>
+          <a class="btn" href="#como-funciona">Cómo funciona</a>
+        </div>
+
+        <div class="check">
+          <div class="icon">✓</div>
+          <div><b>Ideal para:</b> Realtors, clínicas, roofing, seguros, talleres, contractors, etc.</div>
+        </div>
+        <div class="check">
+          <div class="icon">✓</div>
+          <div><b>Objetivo:</b> Que cada llamada termine en <b>lead</b> o <b>cita</b>. Sin excusas.</div>
+        </div>
+      </div>
+
+      <div class="heroCard" aria-label="Resumen rápido">
+        <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
+          <div>
+            <div style="font-weight:900; font-size:16px; letter-spacing:-.2px;">Lo que haces hoy</div>
+            <div style="color:var(--muted); font-size:13px; margin-top:6px;">
+              Si estás ocupado, se pierden llamadas = se pierden clientes.
+            </div>
+          </div>
+          <span class="badge">Solución simple</span>
+        </div>
+
+        <div class="grid3">
+          <div class="mini">
+            <h4>Responde 24/7</h4>
+            <p>Siempre hay alguien atendiendo, aunque estés manejando o con clientes.</p>
+          </div>
+          <div class="mini">
+            <h4>Captura leads</h4>
+            <p>Nombre, teléfono, idioma, interés (comprar / vender), tipo de cita.</p>
+          </div>
+          <div class="mini">
+            <h4>Agenda citas</h4>
+            <p>Presencial o llamada. Fecha y hora. Todo se guarda en tu CRM.</p>
+          </div>
+        </div>
+
+        <div class="fine">
+          * Se adapta a tu negocio. No vendemos “IA”; vendemos <b>clientes capturados</b>.
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+      <h2 class="sectionTitle">Qué hace Línea Activa 24/7</h2>
+      <p class="sectionSub">
+        Un sistema simple y efectivo para negocios que pierden llamadas.
+        El agente atiende, filtra y guarda información para que tú cierres ventas.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>📞 Respuesta inmediata</h3>
+          <p>Atiende llamadas entrantes 24/7. Sin buzón, sin “llame más tarde”.</p>
+        </div>
+        <div class="card">
+          <h3>🗣️ Español e inglés</h3>
+          <p>Detecta el idioma del cliente y sigue la conversación en el idioma correcto.</p>
+        </div>
+        <div class="card">
+          <h3>📋 CRM automático</h3>
+          <p>Guarda el lead y la cita en tu CRM para que el dueño lo vea cuando quiera.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="como-funciona">
+      <h2 class="sectionTitle">Cómo funciona</h2>
+      <p class="sectionSub">
+        Implementación rápida. En poco tiempo puedes tener un número atendido 24/7 y leads guardados automáticamente.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <h4>Configuración</h4>
+            <p>Conectamos tu número, definimos el guion y lo que el agente debe capturar.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <h4>CRM + Citas</h4>
+            <p>Creamos el tablero con leads y citas para que puedas ver todo en un solo lugar.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <h4>Listo</h4>
+            <p>Desde ese momento, cada llamada queda registrada como lead o cita (sin perder datos).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section id="precios">
+      <h2 class="sectionTitle">Precios</h2>
+      <p class="sectionSub">
+        Un plan claro y fácil de entender. Instalación + mensualidad. Sin complicaciones.
+      </p>
+
+      <div class="pricing">
+        <div class="priceCard">
+          <div class="priceTop">
+            <div>
+              <div style="font-weight:900; font-size:16px;">Instalación (único pago)</div>
+              <div class="money">$800 <small>USD</small></div>
+            </div>
+            <span class="badge">Setup</span>
+          </div>
+          <ul>
+            <li>Agente de voz bilingüe (español/inglés)</li>
+            <li>Guion optimizado para capturar leads</li>
+            <li>Conexión al CRM (leads + citas)</li>
+            <li>Pruebas y ajustes iniciales</li>
+          </ul>
+          <div class="fine">* Enfocado en negocios latinos en USA. Implementación rápida.</div>
+        </div>
+
+        <div class="priceCard">
+          <div class="priceTop">
+            <div>
+              <div style="font-weight:900; font-size:16px;">Mensualidad</div>
+              <div class="money">$300 <small>USD / mes</small></div>
+            </div>
+            <span class="badge">Servicio 24/7</span>
+          </div>
+          <ul>
+            <li>Atención 24/7 sin parar</li>
+            <li>Registro automático de leads y citas</li>
+            <li>Soporte y mantenimiento</li>
+            <li>Mejoras del guion según resultados</li>
+          </ul>
+          <div class="fine">
+            * El objetivo es simple: <b>no perder llamadas</b> y convertirlas en <b>clientes</b>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="sectionTitle">Preguntas comunes</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>¿Esto reemplaza a un empleado?</h3>
+          <p>Te cubre 24/7 para que no pierdas llamadas. Tú sigues cerrando ventas. El sistema te trae el lead.</p>
+        </div>
+        <div class="card">
+          <h3>¿Qué información guarda?</h3>
+          <p>Nombre, teléfono, idioma, interés (comprar/vender), tipo de cita (presencial/llamada), fecha y hora.</p>
+        </div>
+        <div class="card">
+          <h3>¿Cuánto tarda en instalarse?</h3>
+          <p>Depende del negocio, pero el objetivo es hacerlo rápido y funcional: que ya responda y guarde leads.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <h2 class="sectionTitle">Solicitar demo</h2>
+      <p class="sectionSub">
+        Déjanos tus datos y te mostramos cómo se ve funcionando (llamada real + lead guardado en CRM).
+      </p>
+
+      <div class="contactBox">
+        <div class="row">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Tu nombre" />
+          </div>
+          <div class="field">
+            <label for="negocio">Negocio</label>
+            <input id="negocio" type="text" placeholder="Nombre del negocio" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" type="tel" placeholder="(XXX) XXX-XXXX" />
+          </div>
+          <div class="field">
+            <label for="ciudad">Ciudad / Estado</label>
+            <input id="ciudad" type="text" placeholder="Orlando, FL" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="mensaje">Qué necesitas (opcional)</label>
+          <textarea id="mensaje" placeholder="Ej: Soy realtor y pierdo llamadas cuando estoy mostrando casas."></textarea>
+        </div>
+
+        <div class="ctaRow" style="flex-wrap:wrap;">
+          <!-- IMPORTANTE: cambia el número por el tuyo en formato internacional, ej: 1407XXXXXXX -->
+          <a id="whatsappBtn" class="btn primary" href="#" rel="noopener">Enviar por WhatsApp</a>
+          <!-- IMPORTANTE: cambia este email -->
+          <a class="btn" href="mailto:tuemail@tudominio.com?subject=Demo%20L%C3%ADnea%20Activa%2024%2F7">Enviar por email</a>
+          <span class="mutedSmall">Respuesta rápida. No vendemos “IA”; vendemos <b>llamadas atendidas</b>.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;">
+        <div>© <span id="year"></span> Línea Activa 24/7</div>
+        <div style="color:rgba(185,195,230,.85)">
+          <a href="#inicio">Inicio</a> ·
+          <a href="#precios">Precios</a> ·
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Cambia este número por el tuyo (WhatsApp) en formato internacional SIN + ni espacios.
+    // Ejemplo: USA +1 407 000 0000 -> "14070000000"
+    const WHATSAPP_NUMBER = "14070000000";
+
+    const yearEl = document.getElementById("year");
+    yearEl.textContent = new Date().getFullYear();
+
+    function safe(v){ return (v || "").toString().trim(); }
+
+    function buildMessage(){
+      const nombre = safe(document.getElementById("nombre").value);
+      const negocio = safe(document.getElementById("negocio").value);
+      const telefono = safe(document.getElementById("telefono").value);
+      const ciudad = safe(document.getElementById("ciudad").value);
+      const mensaje = safe(document.getElementById("mensaje").value);
+
+      const lines = [
+        "Hola, quiero una demo de Línea Activa 24/7.",
+        "",
+        nombre ? `Nombre: ${nombre}` : "",
+        negocio ? `Negocio: ${negocio}` : "",
+        telefono ? `Teléfono: ${telefono}` : "",
+        ciudad ? `Ciudad/Estado: ${ciudad}` : "",
+        mensaje ? `Nota: ${mensaje}` : "",
+        "",
+        "Me interesa que el agente responda llamadas 24/7 y guarde leads/citas."
+      ].filter(Boolean);
+
+      return lines.join("\n");
+    }
+
+    const waBtn = document.getElementById("whatsappBtn");
+    waBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const text = encodeURIComponent(buildMessage());
+      // WhatsApp Click to Chat
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
